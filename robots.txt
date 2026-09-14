@@ -1,0 +1,6 @@
+# Alkimia New Tavern
+User-agent: *
+Allow: /
+
+# Cambia el dominio por el definitivo cuando lo tengas
+Sitemap: https://alkimia-new-tavern.vercel.app/sitemap.xml

@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B0B0D" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F7F4EE" media="(prefers-color-scheme: light)">
+
+<!-- ==========================================================================
+     SEO básico
+     IMPORTANTE: sustituye https://alkimia-new-tavern.vercel.app por tu dominio
+     definitivo antes de publicar (aparece en canonical, Open Graph y sitemap).
+     ========================================================================== -->
+<title>Alkimia New Tavern | Cocina de fusión en Alcantarilla, Murcia</title>
+<meta name="description" content="Alkimia New Tavern: cocina de fusión en Alcantarilla, Murcia. Tapas de autor, baos, dumplings y platos de producto. Terraza climatizada, barra y menús de grupo. Reserva en el 623 28 86 81.">
+<meta name="keywords" content="restaurante Alcantarilla, cocina fusión Murcia, tapas de autor Alcantarilla, Alkimia New Tavern, gastrobar Murcia, terraza Alcantarilla, menús de grupo Murcia, steak tartar Alcantarilla">
+<meta name="author" content="Alkimia New Tavern">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://alkimia-new-tavern.vercel.app/">
+
+<!-- Open Graph / redes sociales -->
+<meta property="og:type" content="restaurant.restaurant">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Alkimia New Tavern">
+<meta property="og:title" content="Alkimia New Tavern | Cocina de fusión en Alcantarilla">
+<meta property="og:description" content="Tapas de autor, baos, dumplings y producto de temporada en el centro de Alcantarilla. Terraza climatizada y menús de grupo.">
+<meta property="og:url" content="https://alkimia-new-tavern.vercel.app/">
+<meta property="og:image" content="https://alkimia-new-tavern.vercel.app/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sala principal de Alkimia New Tavern con la barra al fondo">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alkimia New Tavern | Cocina de fusión en Alcantarilla">
+<meta name="twitter:description" content="Tapas de autor, baos, dumplings y producto de temporada en Alcantarilla, Murcia.">
+<meta name="twitter:image" content="https://alkimia-new-tavern.vercel.app/images/og.jpg">
+
+<!-- Iconos y manifiesto -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Tipografías: se precarga la conexión para que no bloqueen el render -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap">
+</noscript>
+
+<link rel="stylesheet" href="/styles.css">
+
+<!-- La imagen del hero es la más pesada de la primera vista: se precarga -->
+<link rel="preload" as="image" href="/images/hero.jpg" fetchpriority="high">
+
+<!-- Fija el tema antes de pintar para evitar el parpadeo blanco/negro -->
+<script>
+  (function () {
+    document.documentElement.classList.remove('no-js');
+    try {
+      var saved = localStorage.getItem('alkimia-theme');
+      var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      var theme = saved || (prefersLight ? 'light' : 'dark');
+      if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    } catch (e) { /* almacenamiento bloqueado: se queda el tema oscuro */ }
+  })();
+</script>
+
+<!-- ==========================================================================
+     Datos estructurados (schema.org) para buscadores y Google Maps.
+     NOTA: no se declara "openingHoursSpecification" ni "aggregateRating"
+     porque no disponemos de esos datos confirmados. Añádelos cuando los
+     tengas: mejoran mucho la ficha en Google.
+     ========================================================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "@id": "https://alkimia-new-tavern.vercel.app/#restaurant",
+  "name": "Alkimia New Tavern",
+  "description": "Restaurante de cocina de fusión en Alcantarilla (Murcia). Tapas de autor, baos, dumplings, producto de temporada, terraza climatizada y menús de grupo.",
+  "url": "https://alkimia-new-tavern.vercel.app/",
+  "telephone": "+34623288681",
+  "image": "https://alkimia-new-tavern.vercel.app/images/og.jpg",
+  "priceRange": "€€",
+  "currenciesAccepted": "EUR",
+  "servesCuisine": ["Fusión", "Española", "Asiática", "Tapas de autor"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C. Alcalde Rodrigo Manchón España, 4, bajo",
+    "addressLocality": "Alcantarilla",
+    "addressRegion": "Murcia",
+    "postalCode": "30820",
+    "addressCountry": "ES"
+  },
+  "areaServed": { "@type": "City", "name": "Alcantarilla" },
+  "acceptsReservations": "True",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Terraza climatizada", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Aire acondicionado", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Menú infantil", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Menús de grupo", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Barra", "value": true }
+  ],
+  "hasMenu": {
+    "@type": "Menu",
+    "name": "Carta Alkimia New Tavern",
+    "inLanguage": "es",
+    "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "Entrantes y para picar",
+        "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Tosta de sardina ahumada", "offers": { "@type": "Offer", "price": "3.80", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Ensaladilla de bacon y cebolla caramelizada", "offers": { "@type": "Offer", "price": "7.50", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Bonito en semi curación, pimientos asados y crema de piparras", "offers": { "@type": "Offer", "price": "16.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Berenjena templada, romescu y vinagreta de coliflor", "offers": { "@type": "Offer", "price": "13.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Timbal de salmón con vinagreta de tomate y ponzu", "offers": { "@type": "Offer", "price": "18.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Croqueta Alkimia", "offers": { "@type": "Offer", "price": "3.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Caballito con mahonesa cítrica y crujiente nori", "offers": { "@type": "Offer", "price": "3.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Tigre de mejillón escabechado 5 especias", "offers": { "@type": "Offer", "price": "3.20", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Dumpling de gamba y americana thai", "offers": { "@type": "Offer", "price": "3.50", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Botón de rabo de toro y satay de café", "offers": { "@type": "Offer", "price": "4.50", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Patatas bravas con yogur y lima", "offers": { "@type": "Offer", "price": "9.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Nachos a la pastora", "offers": { "@type": "Offer", "price": "15.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Bao de panceta glaseada y salsa tártara", "offers": { "@type": "Offer", "price": "8.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Perrete X", "offers": { "@type": "Offer", "price": "14.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Brioche de cordero asado, crema de sobrasada picante y salsa raita", "offers": { "@type": "Offer", "price": "10.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Croissant de guiso de secreto, curry verde y pepino encurtido", "offers": { "@type": "Offer", "price": "6.50", "priceCurrency": "EUR" } }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Principales",
+        "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Pulpo rockero, causa limeña y americana de gamba blanca", "offers": { "@type": "Offer", "price": "23.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Calamar nacional, chalotas confitadas, piñones y palo cortao", "offers": { "@type": "Offer", "price": "19.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Solomillo de cerdo ibérico, parmentier de calabaza", "offers": { "@type": "Offer", "price": "23.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Codillo glaseado con barbacoa de sésamo y patatas con crema de parmesano", "offers": { "@type": "Offer", "price": "17.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Rodaballo con ajada, oloroso y relish de pepinillo", "offers": { "@type": "Offer", "price": "28.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Lubina con crema de apionabo y arroz salvaje", "offers": { "@type": "Offer", "price": "21.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Selección de quesos de autor" }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Para los pequeños alkimistas",
+        "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Fingers de pollo con patatas fritas", "offers": { "@type": "Offer", "price": "7.50", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Hamburguesa Alkimia con patatas fritas", "offers": { "@type": "Offer", "price": "8.00", "priceCurrency": "EUR" } }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Postres",
+        "hasMenuItem": [
+          { "@type": "MenuItem", "name": "El chocolate de Antonio", "description": "Chocolate en texturas", "offers": { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Carrot cake y crema de naranja y canela", "offers": { "@type": "Offer", "price": "6.00", "priceCurrency": "EUR" } },
+          { "@type": "MenuItem", "name": "Torrija de brioche con dulce de leche", "offers": { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR" } }
+        ]
+      }
+    ]
+  }
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+<!-- Barra fina de progreso de lectura -->
+<div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
+
+<!-- ==========================================================================
+     CABECERA
+     ========================================================================== -->
+<header class="header" id="header">
+  <div class="wrap wrap--wide header__inner">
+
+    <a class="brand" href="#inicio" aria-label="Alkimia New Tavern, ir al inicio">
+      <!-- Marca: alambique alquímico estilizado -->
+      <svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+        <circle cx="24" cy="24" r="22.5" stroke="currentColor" stroke-width="1.2" opacity=".45"/>
+        <path d="M24 9.5 38 33.5H10L24 9.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="M15.4 26.2h17.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <circle cx="24" cy="30" r="2.1" fill="currentColor"/>
+      </svg>
+      <span class="brand__text">
+        <span class="brand__name">Alkimia</span>
+        <span class="brand__tag">New Tavern</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Navegación principal">
+      <ul class="nav__list" id="navList">
+        <li><a class="nav__link" href="#sobre-nosotros">El local</a></li>
+        <li><a class="nav__link" href="#carta">Carta</a></li>
+        <li><a class="nav__link" href="#galeria">Galería</a></li>
+        <li><a class="nav__link" href="#resenas">Reseñas</a></li>
+        <li><a class="nav__link" href="#info">Información</a></li>
+        <li><a class="nav__link" href="#como-llegar">Cómo llegar</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" type="button"
+                aria-label="Cambiar entre tema claro y oscuro">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4.2"/>
+            <path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M20.5 14.3A8.6 8.6 0 0 1 9.7 3.5a8.6 8.6 0 1 0 10.8 10.8Z"/>
+          </svg>
+        </button>
+
+        <a class="btn btn--primary btn--sm btn--header" href="tel:+34623288681">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21.5 16.9v2.6a1.8 1.8 0 0 1-2 1.8 17.6 17.6 0 0 1-7.7-2.7 17.3 17.3 0 0 1-5.3-5.3A17.6 17.6 0 0 1 3.8 5.5a1.8 1.8 0 0 1 1.8-2h2.6a1.8 1.8 0 0 1 1.8 1.5c.1.9.3 1.7.6 2.5a1.8 1.8 0 0 1-.4 1.9l-1.1 1.1a14.4 14.4 0 0 0 5.4 5.4l1.1-1.1a1.8 1.8 0 0 1 1.9-.4c.8.3 1.6.5 2.5.6a1.8 1.8 0 0 1 1.5 1.9Z"/>
+          </svg>
+          Reservar
+        </a>
+
+        <button class="burger" id="burger" type="button"
+                aria-label="Abrir menú de navegación"
+                aria-expanded="false" aria-controls="mobileNav">
+          <span class="burger__box" aria-hidden="true">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+          </span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Panel de navegación móvil -->
+<div class="mobile-nav" id="mobileNav" aria-label="Navegación móvil">
+  <ul class="mobile-nav__list">
+    <li><a class="mobile-nav__link" href="#sobre-nosotros" style="--i:0"><span class="mobile-nav__num">01</span> El local</a></li>
+    <li><a class="mobile-nav__link" href="#carta"          style="--i:1"><span class="mobile-nav__num">02</span> Carta</a></li>
+    <li><a class="mobile-nav__link" href="#galeria"        style="--i:2"><span class="mobile-nav__num">03</span> Galería</a></li>
+    <li><a class="mobile-nav__link" href="#resenas"        style="--i:3"><span class="mobile-nav__num">04</span> Reseñas</a></li>
+    <li><a class="mobile-nav__link" href="#info"           style="--i:4"><span class="mobile-nav__num">05</span> Información</a></li>
+    <li><a class="mobile-nav__link" href="#como-llegar"    style="--i:5"><span class="mobile-nav__num">06</span> Cómo llegar</a></li>
+    <li><a class="mobile-nav__link" href="#reservar"       style="--i:6"><span class="mobile-nav__num">07</span> Reservar</a></li>
+  </ul>
+
+  <div class="mobile-nav__footer">
+    <a class="btn btn--primary btn--block" href="tel:+34623288681">Llamar al 623 28 86 81</a>
+    <a class="btn btn--whatsapp btn--block" href="https://wa.me/34623288681" target="_blank" rel="noopener">
+      Escribir por WhatsApp
+    </a>
+    <p class="mobile-nav__meta">C. Alcalde Rodrigo Manchón España, 4 &middot; Alcantarilla</p>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ==========================================================================
+     HERO
+     ========================================================================== -->
+<section class="hero grain" id="inicio">
+  <div class="hero__media">
+    <img class="hero__img" id="heroImg"
+         src="/images/hero.jpg"
+         alt="Sala principal de Alkimia New Tavern: mesas de madera, sillas negras y la barra iluminada al fondo"
+         width="2000" height="950" fetchpriority="high" decoding="async">
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+  <div class="hero__vignette" aria-hidden="true"></div>
+
+  <div class="wrap wrap--wide hero__inner">
+    <div class="hero__content">
+      <p class="eyebrow hero__eyebrow">Cocina de fusión &middot; Alcantarilla, Murcia</p>
+
+      <h1 class="hero__title">Alkimia <em>New&nbsp;Tavern</em></h1>
+
+      <p class="hero__tagline">
+        Producto de temporada, técnica y una vuelta de tuerca asiática.
+        Tapas de autor, baos y dumplings en una taberna contemporánea
+        en el centro de Alcantarilla.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary btn--lg" href="#reservar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <rect x="3.2" y="4.8" width="17.6" height="16" rx="2.4"/>
+            <path d="M3.2 9.6h17.6M8.4 2.8v4M15.6 2.8v4"/>
+          </svg>
+          Reservar mesa
+        </a>
+        <a class="btn btn--ghost btn--lg" href="#carta">Ver la carta</a>
+      </div>
+
+      <ul class="hero__facts">
+        <li class="hero__fact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M20 10.4c0 5.7-8 12.2-8 12.2s-8-6.5-8-12.2a8 8 0 1 1 16 0Z"/>
+            <circle cx="12" cy="10.2" r="2.9"/>
+          </svg>
+          <span><strong>Alcantarilla</strong>, Murcia</span>
+        </li>
+        <li class="hero__fact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M4 20.5v-5.2a4 4 0 0 1 1.6-3.2L8 10.3V4.2h8v6.1l2.4 1.8a4 4 0 0 1 1.6 3.2v5.2Z"/>
+            <path d="M8 7.2h8"/>
+          </svg>
+          <span>Cocina de <strong>fusión</strong></span>
+        </li>
+        <li class="hero__fact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M3.5 19.5h17M5.5 19.5v-6.2a6.5 6.5 0 0 1 13 0v6.2"/>
+            <path d="M12 6.8V4.2"/>
+          </svg>
+          <span><strong>Terraza</strong> climatizada</span>
+        </li>
+        <li class="hero__fact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M4.5 4.5h15l-6 7.6v6.3l-3 2v-8.3Z"/>
+          </svg>
+          <span><strong>Menús</strong> de grupo</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <a class="hero__cue" href="#sobre-nosotros" aria-label="Bajar a la siguiente sección">Descubrir</a>
+</section>
+
+<!-- Cinta con platos reales de la carta -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span class="marquee__item">Dumpling de gamba</span>
+    <span class="marquee__item">Pulpo rockero</span>
+    <span class="marquee__item">Bao de panceta glaseada</span>
+    <span class="marquee__item">Croqueta Alkimia</span>
+    <span class="marquee__item">Tigre de mejillón</span>
+    <span class="marquee__item">Rodaballo con ajada</span>
+    <span class="marquee__item">Botón de rabo de toro</span>
+    <span class="marquee__item">Torrija de brioche</span>
+    <!-- Copia idéntica: hace que el bucle sea continuo -->
+    <span class="marquee__item">Dumpling de gamba</span>
+    <span class="marquee__item">Pulpo rockero</span>
+    <span class="marquee__item">Bao de panceta glaseada</span>
+    <span class="marquee__item">Croqueta Alkimia</span>
+    <span class="marquee__item">Tigre de mejillón</span>
+    <span class="marquee__item">Rodaballo con ajada</span>
+    <span class="marquee__item">Botón de rabo de toro</span>
+    <span class="marquee__item">Torrija de brioche</span>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     SOBRE NOSOTROS
+     ========================================================================== -->
+<section class="section" id="sobre-nosotros" aria-labelledby="sobre-titulo">
+  <div class="wrap">
+    <div class="about__grid">
+
+      <div class="about__media-stack" data-reveal="left">
+        <div class="about__media" data-parallax="0.05">
+          <img src="/images/interior-barra.jpg"
+               alt="Barra de Alkimia New Tavern con estanterías de madera llenas de cervezas nacionales e importadas, cafetera y destilados"
+               width="1600" height="1200" loading="lazy" decoding="async">
+          <div class="about__seal" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none">
+              <g class="about__seal-ring">
+                <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 5" opacity=".7"/>
+              </g>
+              <circle cx="50" cy="50" r="37" stroke="currentColor" stroke-width="0.8" opacity=".45"/>
+              <path d="M50 28 66 58H34L50 28Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M40 50h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="about__media-float">
+          <img src="/images/interior-comedor.jpg"
+               alt="Comedor de Alkimia New Tavern con mesas de madera vestidas y sillas negras"
+               width="900" height="900" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <div class="about__body" data-reveal="right">
+        <p class="eyebrow">El local</p>
+        <h2 id="sobre-titulo">Una taberna donde la cocina se transforma</h2>
+
+        <p class="lede">
+          Alkimia New Tavern es un gastrobar en el centro de Alcantarilla donde
+          conviven la despensa mediterránea y las técnicas asiáticas.
+        </p>
+
+        <p>
+          En la misma carta encontrarás una ensaladilla y un dumpling, un bonito
+          en semi curación y un bao de panceta glaseada, una tosta de sardina
+          ahumada y un botón de rabo de toro con satay de café. No es fusión por
+          moda: es producto de temporada tratado con la técnica que mejor le
+          sienta a cada plato.
+        </p>
+
+        <p>
+          El espacio acompaña. Sala amplia de mesas de madera, una barra larga
+          con selección de cervezas nacionales e importadas, cafés e infusiones,
+          y una terraza cubierta y climatizada para todo el año. Un sitio donde
+          igual te sientas a tapear en la barra que a cenar con calma.
+        </p>
+
+        <p>
+          Y algo que repiten quienes nos visitan: aquí se explica cada plato.
+          Si vienes sin saber qué pedir, del equipo de sala sale la
+          recomendación.
+        </p>
+
+        <ul class="highlights" role="list">
+          <li class="highlight">
+            <svg class="highlight__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M12 3.2 19.5 16H4.5L12 3.2Z"/><path d="M8 12.6h8"/>
+            </svg>
+            <p class="highlight__title">Cocina de fusión</p>
+            <p class="highlight__text">Base mediterránea, técnica asiática.</p>
+          </li>
+          <li class="highlight">
+            <svg class="highlight__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M3.5 19.5h17M5.5 19.5v-6.2a6.5 6.5 0 0 1 13 0v6.2M12 6.8V4.2"/>
+            </svg>
+            <p class="highlight__title">Terraza todo el año</p>
+            <p class="highlight__text">Cubierta y climatizada.</p>
+          </li>
+          <li class="highlight">
+            <svg class="highlight__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="9" cy="8" r="3.2"/><path d="M2.8 20.2a6.2 6.2 0 0 1 12.4 0"/>
+              <path d="M16.5 5.2a3.2 3.2 0 0 1 0 5.9M18.6 20.2a6.2 6.2 0 0 0-2.6-5"/>
+            </svg>
+            <p class="highlight__title">Para grupos</p>
+            <p class="highlight__text">Menús cerrados y zona reservada.</p>
+          </li>
+          <li class="highlight">
+            <svg class="highlight__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="9"/><path d="M8.6 14.2a4.2 4.2 0 0 0 6.8 0M9.3 9.6h.01M14.7 9.6h.01"/>
+            </svg>
+            <p class="highlight__title">Con niños</p>
+            <p class="highlight__text">Menú para los pequeños alkimistas.</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     CARTA
+     ========================================================================== -->
+<section class="section section--elev section--line" id="carta" aria-labelledby="carta-titulo">
+  <div class="wrap">
+
+    <div class="section-head section-head--center" data-reveal>
+      <p class="eyebrow">La carta</p>
+      <h2 id="carta-titulo">Para picar, compartir y quedarse</h2>
+      <p class="lede">
+        Tapas de autor, principales de producto y postres de casa.
+        La carta cambia con la temporada, así que puede haber sugerencias
+        fuera de esta lista.
+      </p>
+    </div>
+
+    <!-- Pestañas: cada botón controla un panel -->
+    <div class="menu__tabs" role="tablist" aria-label="Secciones de la carta" data-reveal>
+      <button class="menu__tab" type="button" role="tab" id="tab-entrantes"
+              aria-controls="panel-entrantes" aria-selected="true" tabindex="0">Entrantes y para picar</button>
+      <button class="menu__tab" type="button" role="tab" id="tab-principales"
+              aria-controls="panel-principales" aria-selected="false" tabindex="-1">Principales</button>
+      <button class="menu__tab" type="button" role="tab" id="tab-postres"
+              aria-controls="panel-postres" aria-selected="false" tabindex="-1">Postres</button>
+      <button class="menu__tab" type="button" role="tab" id="tab-ninos"
+              aria-controls="panel-ninos" aria-selected="false" tabindex="-1">Pequeños alkimistas</button>
+      <button class="menu__tab" type="button" role="tab" id="tab-grupos"
+              aria-controls="panel-grupos" aria-selected="false" tabindex="-1">Menús de grupo</button>
+    </div>
+
+    <!-- ----- Entrantes ----- -->
+    <div class="menu__panel" id="panel-entrantes" role="tabpanel" aria-labelledby="tab-entrantes" tabindex="0">
+      <ul class="menu__list menu__list--split" role="list">
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Tosta de sardina ahumada</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">3,80&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Ensaladilla de bacon y cebolla caramelizada</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">7,50&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Bonito en semi curación, pimientos asados y crema de piparras</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">16&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Berenjena templada, romescu y vinagreta de coliflor</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">13&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Timbal de salmón con vinagreta de tomate y ponzu</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">18&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Croqueta Alkimia<span class="dish__tag">La de la casa</span></span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">3&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Caballito con mahonesa cítrica y crujiente nori</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">3&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Tigre de mejillón escabechado 5 especias</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">3,20&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Dumpling de gamba y americana thai</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">3,50&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Botón de rabo de toro y satay de café</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">4,50&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Patatas bravas con yogur y lima</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">9&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Nachos a la pastora</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">15&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Bao de panceta glaseada y salsa tártara</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">8&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Perrete &laquo;X&raquo;</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">14&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Brioche de cordero asado, crema de sobrasada picante y salsa raita</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">10&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Croissant de guiso de secreto, curry verde y pepino encurtido</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">6,50&nbsp;&euro;</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ----- Principales ----- -->
+    <div class="menu__panel" id="panel-principales" role="tabpanel" aria-labelledby="tab-principales" tabindex="0" hidden>
+      <ul class="menu__list menu__list--split" role="list">
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Pulpo rockero, causa limeña y americana de gamba blanca</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">23&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Calamar nacional, chalotas confitadas, piñones y palo cortao</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">19&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Solomillo de cerdo ibérico, parmentier de calabaza</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">23&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Codillo glaseado con barbacoa de sésamo y patatas con crema de parmesano</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">17&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Rodaballo con ajada, oloroso y relish de pepinillo</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">28&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Lubina con crema de apionabo y arroz salvaje</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">21&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Selección de quesos de autor</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">S/C</span>
+          </span>
+          <span class="dish__note">Según mercado. Consulta la selección del día.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ----- Postres ----- -->
+    <div class="menu__panel" id="panel-postres" role="tabpanel" aria-labelledby="tab-postres" tabindex="0" hidden>
+      <ul class="menu__list menu__list--split" role="list">
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">El chocolate de Antonio</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">7&nbsp;&euro;</span>
+          </span>
+          <span class="dish__note">Chocolate en texturas.</span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Carrot cake y crema de naranja y canela</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">6&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Torrija de brioche con dulce de leche</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">7&nbsp;&euro;</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ----- Menú infantil ----- -->
+    <div class="menu__panel" id="panel-ninos" role="tabpanel" aria-labelledby="tab-ninos" tabindex="0" hidden>
+      <ul class="menu__list menu__list--split" role="list">
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Fingers de pollo con patatas fritas</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">7,50&nbsp;&euro;</span>
+          </span>
+        </li>
+        <li class="dish">
+          <span class="dish__head">
+            <span class="dish__name">Hamburguesa Alkimia con patatas fritas</span>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price">8&nbsp;&euro;</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ----- Menús de grupo ----- -->
+    <div class="menu__panel" id="panel-grupos" role="tabpanel" aria-labelledby="tab-grupos" tabindex="0" hidden>
+      <div class="set-menus">
+
+        <article class="set-menu">
+          <header class="set-menu__head">
+            <h3 class="set-menu__name">Menú 1</h3>
+            <p class="set-menu__price">35&nbsp;&euro;</p>
+          </header>
+          <ul class="set-menu__list" role="list">
+            <li>Ensaladilla Alkimia</li>
+            <li>Croqueta Alkimia</li>
+            <li>Säam de pollo y salsa cantonesa</li>
+            <li>Nachos a la pastora</li>
+            <li>Bao de calamar o bao carnívoro de panceta <em>(a elegir uno)</em></li>
+            <li>Costillar de cerdo BBQ</li>
+            <li>Brownie de chocolate y dulce de leche</li>
+          </ul>
+          <p class="set-menu__foot">Incluye bebida, pan y café.</p>
+        </article>
+
+        <article class="set-menu">
+          <header class="set-menu__head">
+            <h3 class="set-menu__name">Menú 2</h3>
+            <p class="set-menu__price">40&nbsp;&euro;</p>
+          </header>
+          <ul class="set-menu__list" role="list">
+            <li>Ensaladilla Alkimia <em>(a compartir)</em></li>
+            <li>Tosta de sardina ahumada</li>
+            <li>Alcachofas confitadas y salazones <em>(a compartir)</em></li>
+            <li>Caballito con mahonesa de gamba y cítricos</li>
+            <li>Buñuelo de bacalao, mahonesa de soja y katsuobushi</li>
+            <li>Empanadilla San Marco de bolognesa de chato murciano</li>
+            <li>Merluza en tempura con frito de achiote <em>(a compartir)</em></li>
+            <li>½ solomillo de ternera o ½ lubina con guarnición</li>
+            <li>Coulant de chocolate</li>
+          </ul>
+          <p class="set-menu__foot">Incluye bebida, pan y café.</p>
+        </article>
+
+        <article class="set-menu">
+          <header class="set-menu__head">
+            <h3 class="set-menu__name">Menú 3</h3>
+            <p class="set-menu__price">47&nbsp;&euro;</p>
+          </header>
+          <ul class="set-menu__list" role="list">
+            <li>Ensaladilla Alkimia</li>
+            <li>Tabla de quesos</li>
+            <li>Ensalada de bonito en semicuración y tomate de temporada</li>
+            <li>Caballito con mahonesa de gamba y cítricos</li>
+            <li>Buñuelo de bacalao, mahonesa de soja y katsuobushi</li>
+            <li>Croqueta Alkimia</li>
+            <li>Lubina entera al horno o solomillo de ternera 200&nbsp;g con guarnición <em>(a elegir uno)</em></li>
+            <li>Coulant de chocolate</li>
+          </ul>
+          <p class="set-menu__foot">Incluye bebida, pan y café.</p>
+        </article>
+
+      </div>
+
+      <p class="notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="9.2"/><path d="M12 8.2v4.6M12 16h.01"/>
+        </svg>
+        <span>
+          <strong>Precios orientativos.</strong> Los menús de grupo pueden haber
+          cambiado de composición o precio. Confírmanos disponibilidad y tarifa
+          actual por teléfono o WhatsApp antes de reservar.
+        </span>
+      </p>
+    </div>
+
+    <p class="notice">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="9.2"/><path d="M12 8.2v4.6M12 16h.01"/>
+      </svg>
+      <span>
+        <strong>Alérgenos e intolerancias.</strong> Si tienes alguna alergia o
+        intolerancia, avísanos al reservar o al llegar: disponemos de la
+        información de alérgenos de todos nuestros platos.
+      </span>
+    </p>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     GALERÍA
+     ========================================================================== -->
+<section class="section" id="galeria" aria-labelledby="galeria-titulo">
+  <div class="wrap wrap--wide">
+
+    <div class="section-head section-head--center" data-reveal>
+      <p class="eyebrow">Galería</p>
+      <h2 id="galeria-titulo">El local y lo que sale de la cocina</h2>
+      <p class="lede">Pulsa cualquier foto para verla a pantalla completa.</p>
+    </div>
+
+    <!-- Cada botón abre el lightbox. data-index lo enlaza con el visor. -->
+    <div class="gallery" id="gallery" data-reveal="scale">
+
+      <button class="gallery__item gallery__item--wide" type="button" data-index="0"
+              aria-label="Ampliar foto: nachos a la pastora">
+        <img src="/images/plato-nachos.jpg" alt="Nachos a la pastora con queso fundido, cebolla roja encurtida y cilantro fresco"
+             width="1200" height="600" loading="lazy" decoding="async">
+        <span class="gallery__overlay">
+          <span class="gallery__zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m21 21-5.2-5.2M10.5 7.8v5.4M7.8 10.5h5.4"/></svg>
+            Ampliar
+          </span>
+          <span class="gallery__caption">Nachos a la pastora</span>
+        </span>
+      </button>
+
+      <button class="gallery__item" type="button" data-index="1"
+              aria-label="Ampliar foto: tosta de steak tartar">
+        <img src="/images/plato-steak-tartar.jpg" alt="Tosta de steak tartar coronada con puerro frito crujiente"
+             width="900" height="900" loading="lazy" decoding="async">
+        <span class="gallery__overlay">
+          <span class="gallery__zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m21 21-5.2-5.2M10.5 7.8v5.4M7.8 10.5h5.4"/></svg>
+            Ampliar
+          </span>
+          <span class="gallery__caption">Tosta de steak tartar</span>
+        </span>
+      </button>
+
+      <button class="gallery__item gallery__item--tall" type="button" data-index="2"
+              aria-label="Ampliar foto: sala de noche">
+        <img src="/images/interior-noche.jpg" alt="Sala de Alkimia New Tavern iluminada de noche con bombillas colgantes y mesas reservadas"
+             width="900" height="1800" loading="lazy" decoding="async">
+        <span class="gallery__overlay">
+          <span class="gallery__zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m21 21-5.2-5.2M10.5 7.8v5.4M7.8 10.5h5.4"/></svg>
+            Ampliar
+          </span>
+          <span class="gallery__caption">La sala de noche</span>
+        </span>
+      </button>
+
+      <button class="gallery__item" type="button" data-index="3"
+              aria-label="Ampliar foto: gamba crujiente">
+        <img src="/images/plato-gamba-crujiente.jpg" alt="Gamba rebozada crujiente con salsa tártara de hierbas"
+             width="900" height="900" loading="lazy" decoding="async">
+        <span class="gallery__overlay">
+          <span class="gallery__zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m21 21-5.2-5.2M10.5 7.8v5.4M7.8 10.5h5.4"/></svg>
+            Ampliar
+          </span>
+          <span class="gallery__caption">Gamba crujiente</span>
+        </span>
+      </button>
+
+      <button class="gallery__item" type="button" data-index="4"
+              aria-label="Ampliar foto: tostas de anchoa">
+        <img src="/images/plato-tostas-anchoa.jpg" alt="Dos tostas de anchoa con tomate y brotes de rúcula servidas sobre pizarra"
+             width="900" height="900" loading="lazy" decoding="async">
+        <span class="gallery__overlay">
+          <span class="gallery__zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m21 21-5.2-5.2M10.5 7.8v5.4M7.8 10.5h5.4"/></svg>
+            Ampliar
+          </span>
+          <span class="gallery__caption">Tostas de anchoa</span>
+        </span>
+      </button>
+
+      <button class="gallery__item gallery__item--wide" type="button" data-index="5"
+              aria-label="Ampliar foto: terraza">
+        <img src="/images/terraza.jpg" alt="Terraza cubierta de Alkimia New Tavern al anochecer, con mesas vestidas y estufas en el techo"
+             width="1200" height="600" loading="lazy" decoding="async">
+        <span class="gallery__overlay">
+          <span class="gallery__zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m21 21-5.2-5.2M10.5 7.8v5.4M7.8 10.5h5.4"/></svg>
+            Ampliar
+          </span>
+          <span class="gallery__caption">La terraza al anochecer</span>
+        </span>
+      </button>
+
+      <button class="gallery__item" type="button" data-index="6"
+              aria-label="Ampliar foto: navajas">
+        <img src="/images/plato-navajas.jpg" alt="Ración de navajas con picadillo de verduras y vinagreta sobre plato rectangular"
+             width="900" height="900" loading="lazy" decoding="async">
+        <span class="gallery__overlay">
+          <span class="gallery__zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m21 21-5.2-5.2M10.5 7.8v5.4M7.8 10.5h5.4"/></svg>
+            Ampliar
+          </span>
+          <span class="gallery__caption">Navajas con vinagreta</span>
+        </span>
+      </button>
+
+      <button class="gallery__item" type="button" data-index="7"
+              aria-label="Ampliar foto: coulant de chocolate">
+        <img src="/images/postre-coulant.jpg" alt="Coulant de chocolate con helado y fresa sobre plato de madera"
+             width="900" height="900" loading="lazy" decoding="async">
+        <span class="gallery__overlay">
+          <span class="gallery__zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m21 21-5.2-5.2M10.5 7.8v5.4M7.8 10.5h5.4"/></svg>
+            Ampliar
+          </span>
+          <span class="gallery__caption">Coulant de chocolate</span>
+        </span>
+      </button>
+
+      <button class="gallery__item" type="button" data-index="8"
+              aria-label="Ampliar foto: patatas con salsa">
+        <img src="/images/plato-patatas.jpg" alt="Patatas con salsa, encurtido de cebolla y semillas en bol oscuro"
+             width="900" height="900" loading="lazy" decoding="async">
+        <span class="gallery__overlay">
+          <span class="gallery__zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m21 21-5.2-5.2M10.5 7.8v5.4M7.8 10.5h5.4"/></svg>
+            Ampliar
+          </span>
+          <span class="gallery__caption">Patatas de la casa</span>
+        </span>
+      </button>
+
+      <button class="gallery__item" type="button" data-index="9"
+              aria-label="Ampliar foto: comedor">
+        <img src="/images/interior-comedor.jpg" alt="Comedor de Alkimia New Tavern con mesas de madera y sillas negras junto a la pared de listones"
+             width="900" height="900" loading="lazy" decoding="async">
+        <span class="gallery__overlay">
+          <span class="gallery__zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m21 21-5.2-5.2M10.5 7.8v5.4M7.8 10.5h5.4"/></svg>
+            Ampliar
+          </span>
+          <span class="gallery__caption">El comedor</span>
+        </span>
+      </button>
+
+      <button class="gallery__item" type="button" data-index="10"
+              aria-label="Ampliar foto: postre con helado">
+        <img src="/images/postre-bizcocho.jpg" alt="Bizcocho templado acompañado de una bola de helado"
+             width="900" height="900" loading="lazy" decoding="async">
+        <span class="gallery__overlay">
+          <span class="gallery__zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m21 21-5.2-5.2M10.5 7.8v5.4M7.8 10.5h5.4"/></svg>
+            Ampliar
+          </span>
+          <span class="gallery__caption">Postre de la casa</span>
+        </span>
+      </button>
+
+      <button class="gallery__item" type="button" data-index="11"
+              aria-label="Ampliar foto: la barra">
+        <img src="/images/interior-barra.jpg" alt="Barra de Alkimia New Tavern con estanterías de cervezas, destilados, tés y cafetera"
+             width="900" height="900" loading="lazy" decoding="async">
+        <span class="gallery__overlay">
+          <span class="gallery__zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m21 21-5.2-5.2M10.5 7.8v5.4M7.8 10.5h5.4"/></svg>
+            Ampliar
+          </span>
+          <span class="gallery__caption">La barra</span>
+        </span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     RESEÑAS
+     Textos reales publicados por clientes en Google. Se reproducen tal cual;
+     los que aparecen cortados con «…» lo están también en el original.
+     ========================================================================== -->
+<section class="section section--elev section--line" id="resenas" aria-labelledby="resenas-titulo">
+  <div class="wrap">
+
+    <div class="section-head section-head--center" data-reveal>
+      <p class="eyebrow">Lo que dicen</p>
+      <h2 id="resenas-titulo">Reseñas de nuestros clientes</h2>
+      <p class="lede">Opiniones publicadas en Google por quienes ya han pasado por aquí.</p>
+    </div>
+
+    <div class="reviews__rail" data-reveal>
+
+      <figure class="review">
+        <blockquote class="review__text">
+          Comida riquísima. Proporciones un poco pequeñas pero de sabores
+          espectaculares. La tostada de salmón riquísima. La atención de las
+          camareras super buena. Muy atentas a todo. Tengo que destacar al
+          camarero jovencito, que nos explicaba cada…
+        </blockquote>
+        <figcaption class="review__author">
+          <span class="review__avatar" aria-hidden="true">S</span>
+          <span class="review__who">
+            <span class="review__name">Sarai Zafra Gómez</span>
+            <span class="review__meta">Local Guide &middot; 24 reseñas &middot; hace 4 meses</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure class="review">
+        <blockquote class="review__text">
+          Este restaurante nos sorprendió muchísimo. Las elaboraciones estaban
+          muy bien hechas y los sabores eran realmente deliciosos y diferentes.
+          Es un sitio perfecto tanto para cenar como para tapear, con platos
+          que se nota que están preparados…
+        </blockquote>
+        <figcaption class="review__author">
+          <span class="review__avatar" aria-hidden="true">A</span>
+          <span class="review__who">
+            <span class="review__name">Asensio</span>
+            <span class="review__meta">Local Guide &middot; 115 reseñas &middot; hace 10 meses</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure class="review">
+        <blockquote class="review__text">
+          Restaurante muy cómodo y bonito. El servicio muy bien, te explican
+          cada plato, la comida&hellip;, para mí BUENISIMA. Calidad-Precio muy
+          bien. Ya he dicho que la comida está muy buena pero el Steak-Tartar
+          es un espectáculo.
+        </blockquote>
+        <figcaption class="review__author">
+          <span class="review__avatar" aria-hidden="true">A</span>
+          <span class="review__who">
+            <span class="review__name">Antonio Javier García</span>
+            <span class="review__meta">Local Guide &middot; 29 reseñas &middot; hace 7 meses</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure class="review">
+        <blockquote class="review__text">
+          Hemos comido espectacular! Nos ha atendido Daniel y no nos ha podido
+          aconsejar mejor. Hemos pedido la tosta de ensaladilla, caballitos,
+          gyoza y lo mejor los huevos rotos con gambas al ajillo, simplemente
+          espectaculares. Como plato principal…
+        </blockquote>
+        <figcaption class="review__author">
+          <span class="review__avatar" aria-hidden="true">L</span>
+          <span class="review__who">
+            <span class="review__name">Lorena Martínez</span>
+            <span class="review__meta">3 reseñas &middot; hace 2 meses</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure class="review">
+        <blockquote class="review__text">
+          Buen trato y servicio. Comida de fusión muy rica. Hemos ido con dos
+          niñas pequeñas (6 y 9) y ha ido genial. Gracias, Iker, por tu
+          cercanía.
+        </blockquote>
+        <figcaption class="review__author">
+          <span class="review__avatar" aria-hidden="true">N</span>
+          <span class="review__who">
+            <span class="review__name">Noelia Moreno</span>
+            <span class="review__meta">Local Guide &middot; 104 reseñas &middot; hace 5 meses</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure class="review">
+        <blockquote class="review__text">
+          Hacía muchísimo tiempo que no íbamos a comer y volvió a ser un acierto
+          lleno de sorpresas. Para empezar nos pedimos unas tostas de salmón que
+          llevan una base de alga nori…
+        </blockquote>
+        <figcaption class="review__author">
+          <span class="review__avatar" aria-hidden="true">P</span>
+          <span class="review__who">
+            <span class="review__name">Patricia C.W</span>
+            <span class="review__meta">Local Guide &middot; 39 reseñas &middot; hace 9 meses</span>
+          </span>
+        </figcaption>
+      </figure>
+
+    </div>
+
+    <div class="reviews__foot" data-reveal>
+      <p class="reviews__hint">Desliza para ver más &rarr;</p>
+      <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Alkimia+New+Tavern+Alcantarilla"
+         target="_blank" rel="noopener">
+        Ver todas las reseñas en Google
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M8 16 16 8M9.4 8H16v6.6"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     INFORMACIÓN PRÁCTICA
+     --------------------------------------------------------------------------
+     PARA EL PROPIETARIO: los horarios no estaban confirmados al construir la
+     web. Para publicarlos, sustituye el bloque .hours--pending por una lista
+     como esta y elimina el aviso:
+
+       <ul class="hours" role="list">
+         <li class="hours__row" data-day="1">
+           <span class="hours__day">Lunes</span>
+           <span class="hours__time">Cerrado</span>
+         </li>
+         ... (data-day: 0 domingo, 1 lunes … 6 sábado)
+       </ul>
+
+     Añade también "openingHoursSpecification" al JSON-LD de la cabecera.
+     ========================================================================== -->
+<section class="section" id="info" aria-labelledby="info-titulo">
+  <div class="wrap">
+
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Información práctica</p>
+      <h2 id="info-titulo">Dónde estamos y cómo contactar</h2>
+    </div>
+
+    <div class="info__grid">
+
+      <article class="info-card" data-reveal style="--reveal-delay:0ms">
+        <div class="info-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10.4c0 5.7-8 12.2-8 12.2s-8-6.5-8-12.2a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10.2" r="2.9"/>
+          </svg>
+        </div>
+        <p class="info-card__label">Dirección</p>
+        <p class="info-card__value">
+          C. Alcalde Rodrigo Manchón España, 4, bajo<br>
+          30820 Alcantarilla, Murcia
+        </p>
+        <p class="info-card__action">
+          <a class="btn btn--solid btn--sm"
+             href="https://www.google.com/maps/dir/?api=1&amp;destination=C.%20Alcalde%20Rodrigo%20Manch%C3%B3n%20Espa%C3%B1a%2C%204%2C%2030820%20Alcantarilla%2C%20Murcia"
+             target="_blank" rel="noopener">Cómo llegar</a>
+        </p>
+      </article>
+
+      <article class="info-card" data-reveal style="--reveal-delay:70ms">
+        <div class="info-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 16.9v2.6a1.8 1.8 0 0 1-2 1.8 17.6 17.6 0 0 1-7.7-2.7 17.3 17.3 0 0 1-5.3-5.3A17.6 17.6 0 0 1 3.8 5.5a1.8 1.8 0 0 1 1.8-2h2.6a1.8 1.8 0 0 1 1.8 1.5c.1.9.3 1.7.6 2.5a1.8 1.8 0 0 1-.4 1.9l-1.1 1.1a14.4 14.4 0 0 0 5.4 5.4l1.1-1.1a1.8 1.8 0 0 1 1.9-.4c.8.3 1.6.5 2.5.6a1.8 1.8 0 0 1 1.5 1.9Z"/>
+          </svg>
+        </div>
+        <p class="info-card__label">Reservas y pedidos</p>
+        <p class="info-card__value"><a href="tel:+34623288681">623&nbsp;28&nbsp;86&nbsp;81</a></p>
+        <p class="info-card__note">Pulsa para llamar desde el móvil. También atendemos por WhatsApp.</p>
+        <p class="info-card__action">
+          <a class="btn btn--whatsapp btn--sm" href="https://wa.me/34623288681" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M12.04 2.2a9.72 9.72 0 0 0-8.3 14.77L2.2 22.05l5.22-1.5A9.72 9.72 0 1 0 12.04 2.2Zm0 1.85a7.87 7.87 0 1 1-4.1 14.6l-.3-.18-3.1.89.9-3.02-.2-.31A7.87 7.87 0 0 1 12.04 4.05Zm4.5 10.03c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.44-1.36-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28Z"/>
+            </svg>
+            WhatsApp
+          </a>
+        </p>
+      </article>
+
+      <article class="info-card" data-reveal style="--reveal-delay:140ms">
+        <div class="info-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9.2"/><path d="M12 6.8V12l3.4 2"/>
+          </svg>
+        </div>
+        <p class="info-card__label">Horarios</p>
+        <div class="hours--pending">
+          <p class="info-card__value"><span class="pending">Consultar</span></p>
+          <p class="info-card__note">
+            Llámanos o escríbenos por WhatsApp y te confirmamos el horario del
+            día, incluidos festivos y días de cierre.
+          </p>
+        </div>
+        <p class="info-card__action">
+          <a class="btn btn--solid btn--sm" href="tel:+34623288681">Consultar horario</a>
+        </p>
+      </article>
+
+      <article class="info-card" data-reveal style="--reveal-delay:210ms">
+        <div class="info-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.8v18.4M16.4 6.2H9.8a2.9 2.9 0 0 0 0 5.8h4.4a2.9 2.9 0 0 1 0 5.8H7.2"/>
+          </svg>
+        </div>
+        <p class="info-card__label">Rango de precios</p>
+        <p class="info-card__value">Tapas desde 3&nbsp;&euro;<br>Principales 17&ndash;28&nbsp;&euro;</p>
+        <p class="info-card__note">
+          Según la carta vigente. Los menús de grupo se consultan aparte.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     SERVICIOS
+     ========================================================================== -->
+<section class="section section--elev section--line" aria-labelledby="servicios-titulo">
+  <div class="wrap">
+
+    <div class="section-head section-head--center" data-reveal>
+      <p class="eyebrow">Servicios</p>
+      <h2 id="servicios-titulo">Lo que encontrarás en el local</h2>
+    </div>
+
+    <ul class="services" role="list" data-reveal>
+      <li class="service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M3.5 19.5h17M5.5 19.5v-6.2a6.5 6.5 0 0 1 13 0v6.2M12 6.8V4.2"/>
+        </svg>
+        Terraza cubierta
+      </li>
+      <li class="service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M5 8.5c1.6-1.6 3.2-1.6 4.8 0s3.2 1.6 4.8 0 3.2-1.6 4.8 0M5 14c1.6-1.6 3.2-1.6 4.8 0s3.2 1.6 4.8 0 3.2-1.6 4.8 0"/>
+        </svg>
+        Terraza climatizada
+      </li>
+      <li class="service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="3" y="4.6" width="18" height="11.4" rx="2"/><path d="M6.6 19.6h10.8M7.4 9h4M7.4 12.4h7"/>
+        </svg>
+        Aire acondicionado
+      </li>
+      <li class="service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M4.5 4.5h15l-6 7.6v6.3l-3 2v-8.3Z"/>
+        </svg>
+        Barra y coctelería
+      </li>
+      <li class="service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M4.2 8.4h12v5.4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4Z"/><path d="M16.2 9.6h1.8a2.4 2.4 0 0 1 0 4.8h-1.8M5.4 4.6v1.6M9 3.6v2.6M12.6 4.6v1.6"/>
+        </svg>
+        Cafés e infusiones
+      </li>
+      <li class="service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M7.4 3.6h9.2l-.9 15.2a2.4 2.4 0 0 1-2.4 2.3h-2.6a2.4 2.4 0 0 1-2.4-2.3Z"/><path d="M7.1 8.6h9.8"/>
+        </svg>
+        Cervezas de importación
+      </li>
+      <li class="service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="9"/><path d="M8.6 14.2a4.2 4.2 0 0 0 6.8 0M9.3 9.6h.01M14.7 9.6h.01"/>
+        </svg>
+        Menú infantil
+      </li>
+      <li class="service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <circle cx="9" cy="8" r="3.2"/><path d="M2.8 20.2a6.2 6.2 0 0 1 12.4 0M16.5 5.2a3.2 3.2 0 0 1 0 5.9M18.6 20.2a6.2 6.2 0 0 0-2.6-5"/>
+        </svg>
+        Menús de grupo
+      </li>
+      <li class="service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="3.2" y="4.8" width="17.6" height="16" rx="2.4"/><path d="M3.2 9.6h17.6M8.4 2.8v4M15.6 2.8v4"/>
+        </svg>
+        Reserva de mesas
+      </li>
+      <li class="service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M12 3.2 19.5 16H4.5L12 3.2Z"/><path d="M8 12.6h8"/>
+        </svg>
+        Cocina de fusión
+      </li>
+    </ul>
+
+    <p class="notice" data-reveal>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="9.2"/><path d="M12 8.2v4.6M12 16h.01"/>
+      </svg>
+      <span>
+        ¿Necesitas algo concreto &mdash;accesibilidad, sitio para carrito, una
+        mesa grande o una celebración&mdash;? Escríbenos antes de venir y lo
+        organizamos.
+      </span>
+    </p>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     MAPA
+     El iframe no se carga hasta que la persona lo acepta: así no se fijan
+     cookies de Google sin consentimiento previo.
+     ========================================================================== -->
+<section class="section" id="como-llegar" aria-labelledby="mapa-titulo">
+  <div class="wrap">
+
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Cómo llegar</p>
+      <h2 id="mapa-titulo">En pleno Alcantarilla</h2>
+      <p class="lede">
+        A pie de calle, en la Calle Alcalde Rodrigo Manchón España, número 4.
+      </p>
+    </div>
+
+    <div class="map" id="map" data-reveal="scale">
+      <div class="map__consent" id="mapConsent">
+        <svg class="map__consent-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M20 10.4c0 5.7-8 12.2-8 12.2s-8-6.5-8-12.2a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10.2" r="2.9"/>
+        </svg>
+        <p class="map__consent-title">Ver el mapa</p>
+        <p class="map__consent-text">
+          El mapa lo proporciona Google Maps. Al cargarlo se establece conexión
+          con los servidores de Google, que puede instalar cookies en tu
+          dispositivo. Consulta nuestra
+          <a class="link-underline" href="/politica-cookies.html">política de cookies</a>.
+        </p>
+        <button class="btn btn--primary" type="button" id="mapLoad">Cargar el mapa de Google</button>
+      </div>
+
+      <!-- La URL real vive en data-src hasta que se acepta -->
+      <iframe id="mapFrame"
+              data-src="https://maps.google.com/maps?q=C.%20Alcalde%20Rodrigo%20Manch%C3%B3n%20Espa%C3%B1a%2C%204%2C%2030820%20Alcantarilla%2C%20Murcia&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              title="Mapa con la ubicación de Alkimia New Tavern en Alcantarilla, Murcia"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+    </div>
+
+    <div class="map__addr" data-reveal>
+      <span class="map__addr-text">
+        <span class="map__addr-label">Dirección completa</span>
+        <span class="map__addr-value">C. Alcalde Rodrigo Manchón España, 4, bajo &mdash; 30820 Alcantarilla, Murcia</span>
+      </span>
+      <a class="btn btn--primary"
+         href="https://www.google.com/maps/dir/?api=1&amp;destination=C.%20Alcalde%20Rodrigo%20Manch%C3%B3n%20Espa%C3%B1a%2C%204%2C%2030820%20Alcantarilla%2C%20Murcia"
+         target="_blank" rel="noopener">
+        Abrir en Google Maps
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M8 16 16 8M9.4 8H16v6.6"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     RESERVAR
+     --------------------------------------------------------------------------
+     El formulario no envía nada a ningún servidor: compone un mensaje y lo
+     abre en WhatsApp. Así funciona en un hosting estático (Vercel) sin
+     backend, sin base de datos y sin tratar datos personales por nuestra parte.
+     ========================================================================== -->
+<section class="section reserve" id="reservar" aria-labelledby="reservar-titulo">
+  <div class="wrap">
+    <div class="reserve__grid">
+
+      <div class="reserve__aside" data-reveal="left">
+        <p class="eyebrow">Reservar</p>
+        <h2 id="reservar-titulo">Guárdanos tu mesa</h2>
+        <p class="lede">
+          Rellena el formulario y se abrirá WhatsApp con el mensaje ya escrito:
+          solo tienes que pulsar enviar. Si lo prefieres, llámanos directamente.
+        </p>
+
+        <div class="reserve__channels">
+          <a class="reserve__channel" href="tel:+34623288681">
+            <span class="reserve__channel-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.5 16.9v2.6a1.8 1.8 0 0 1-2 1.8 17.6 17.6 0 0 1-7.7-2.7 17.3 17.3 0 0 1-5.3-5.3A17.6 17.6 0 0 1 3.8 5.5a1.8 1.8 0 0 1 1.8-2h2.6a1.8 1.8 0 0 1 1.8 1.5c.1.9.3 1.7.6 2.5a1.8 1.8 0 0 1-.4 1.9l-1.1 1.1a14.4 14.4 0 0 0 5.4 5.4l1.1-1.1a1.8 1.8 0 0 1 1.9-.4c.8.3 1.6.5 2.5.6a1.8 1.8 0 0 1 1.5 1.9Z"/>
+              </svg>
+            </span>
+            <span class="reserve__channel-text">
+              <span class="reserve__channel-label">Llamar ahora</span>
+              <span class="reserve__channel-value">623 28 86 81</span>
+            </span>
+          </a>
+
+          <a class="reserve__channel" href="https://wa.me/34623288681" target="_blank" rel="noopener">
+            <span class="reserve__channel-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2.2a9.72 9.72 0 0 0-8.3 14.77L2.2 22.05l5.22-1.5A9.72 9.72 0 1 0 12.04 2.2Zm0 1.85a7.87 7.87 0 1 1-4.1 14.6l-.3-.18-3.1.89.9-3.02-.2-.31A7.87 7.87 0 0 1 12.04 4.05Zm4.5 10.03c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.44-1.36-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28Z"/>
+              </svg>
+            </span>
+            <span class="reserve__channel-text">
+              <span class="reserve__channel-label">Escribir por WhatsApp</span>
+              <span class="reserve__channel-value">Respuesta rápida</span>
+            </span>
+          </a>
+
+          <a class="reserve__channel" href="#como-llegar">
+            <span class="reserve__channel-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10.4c0 5.7-8 12.2-8 12.2s-8-6.5-8-12.2a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10.2" r="2.9"/>
+              </svg>
+            </span>
+            <span class="reserve__channel-text">
+              <span class="reserve__channel-label">Venir directamente</span>
+              <span class="reserve__channel-value">C. Alcalde Rodrigo Manchón España, 4</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <form class="form" id="reserveForm" novalidate data-reveal="right">
+        <div class="form__grid">
+
+          <div class="form__field">
+            <label class="form__label" for="r-name">Nombre <span class="req" aria-hidden="true">*</span></label>
+            <input class="form__control" type="text" id="r-name" name="name"
+                   autocomplete="name" placeholder="Tu nombre" required
+                   aria-describedby="err-name">
+            <p class="form__error" id="err-name" role="alert"></p>
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="r-phone">Teléfono <span class="req" aria-hidden="true">*</span></label>
+            <input class="form__control" type="tel" id="r-phone" name="phone"
+                   autocomplete="tel" inputmode="tel" placeholder="600 000 000" required
+                   aria-describedby="err-phone">
+            <p class="form__error" id="err-phone" role="alert"></p>
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="r-date">Día <span class="req" aria-hidden="true">*</span></label>
+            <input class="form__control" type="date" id="r-date" name="date" required
+                   aria-describedby="err-date">
+            <p class="form__error" id="err-date" role="alert"></p>
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="r-time">Hora <span class="req" aria-hidden="true">*</span></label>
+            <input class="form__control" type="time" id="r-time" name="time" required
+                   aria-describedby="err-time">
+            <p class="form__error" id="err-time" role="alert"></p>
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="r-people">Comensales <span class="req" aria-hidden="true">*</span></label>
+            <select class="form__control" id="r-people" name="people" required aria-describedby="err-people">
+              <option value="">Selecciona&hellip;</option>
+              <option value="1">1 persona</option>
+              <option value="2">2 personas</option>
+              <option value="3">3 personas</option>
+              <option value="4">4 personas</option>
+              <option value="5">5 personas</option>
+              <option value="6">6 personas</option>
+              <option value="7">7 personas</option>
+              <option value="8">8 personas</option>
+              <option value="más de 8">Más de 8 (grupo)</option>
+            </select>
+            <p class="form__error" id="err-people" role="alert"></p>
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="r-zone">Preferencia de sitio</label>
+            <select class="form__control" id="r-zone" name="zone">
+              <option value="">Sin preferencia</option>
+              <option value="Sala">Sala</option>
+              <option value="Terraza">Terraza</option>
+              <option value="Barra">Barra</option>
+            </select>
+            <p class="form__error" aria-hidden="true"></p>
+          </div>
+
+          <div class="form__field form__field--full">
+            <label class="form__label" for="r-notes">Alergias, celebraciones u otras peticiones</label>
+            <textarea class="form__control" id="r-notes" name="notes" rows="3"
+                      placeholder="Por ejemplo: alergia a los frutos secos, cumpleaños, trona para bebé&hellip;"></textarea>
+            <p class="form__error" aria-hidden="true"></p>
+          </div>
+
+        </div>
+
+        <div class="form__foot">
+          <label class="form__consent">
+            <input type="checkbox" id="r-consent" name="consent" required aria-describedby="err-consent">
+            <span>
+              He leído y acepto la
+              <a class="link-underline" href="/politica-privacidad.html">política de privacidad</a>.
+              Entiendo que la solicitud se enviará por WhatsApp.
+            </span>
+          </label>
+          <p class="form__error" id="err-consent" role="alert"></p>
+
+          <button class="btn btn--whatsapp btn--lg btn--block" type="submit">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M12.04 2.2a9.72 9.72 0 0 0-8.3 14.77L2.2 22.05l5.22-1.5A9.72 9.72 0 1 0 12.04 2.2Zm0 1.85a7.87 7.87 0 1 1-4.1 14.6l-.3-.18-3.1.89.9-3.02-.2-.31A7.87 7.87 0 0 1 12.04 4.05Zm4.5 10.03c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.44-1.36-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28Z"/>
+            </svg>
+            Enviar solicitud por WhatsApp
+          </button>
+
+          <p class="form__status" id="formStatus" role="status" hidden></p>
+
+          <p class="form__note">
+            La reserva no queda confirmada hasta que te respondamos. Para hoy
+            mismo o grupos grandes, mejor llámanos.
+          </p>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==========================================================================
+     PIE DE PÁGINA
+     ========================================================================== -->
+<footer class="footer">
+  <div class="wrap">
+
+    <div class="footer__top">
+
+      <div class="footer__brand">
+        <a class="brand" href="#inicio" aria-label="Alkimia New Tavern, ir al inicio">
+          <svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+            <circle cx="24" cy="24" r="22.5" stroke="currentColor" stroke-width="1.2" opacity=".45"/>
+            <path d="M24 9.5 38 33.5H10L24 9.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M15.4 26.2h17.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <circle cx="24" cy="30" r="2.1" fill="currentColor"/>
+          </svg>
+          <span class="brand__text">
+            <span class="brand__name">Alkimia</span>
+            <span class="brand__tag">New Tavern</span>
+          </span>
+        </a>
+
+        <p class="footer__blurb">
+          Cocina de fusión en Alcantarilla, Murcia. Tapas de autor, producto de
+          temporada y una barra para quedarse.
+        </p>
+
+        <!-- PARA EL PROPIETARIO: sustituye las URLs por vuestros perfiles
+             reales, o borra los enlaces que no uséis. -->
+        <div class="footer__socials">
+          <a class="footer__social"
+             href="https://www.google.com/maps/search/?api=1&amp;query=Alkimia+New+Tavern+Alcantarilla"
+             target="_blank" rel="noopener" aria-label="Alkimia New Tavern en Google Maps">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M20 10.4c0 5.7-8 12.2-8 12.2s-8-6.5-8-12.2a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10.2" r="2.9"/>
+            </svg>
+          </a>
+          <a class="footer__social" href="https://wa.me/34623288681"
+             target="_blank" rel="noopener" aria-label="Escribir a Alkimia New Tavern por WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M12.04 2.2a9.72 9.72 0 0 0-8.3 14.77L2.2 22.05l5.22-1.5A9.72 9.72 0 1 0 12.04 2.2Zm0 1.85a7.87 7.87 0 1 1-4.1 14.6l-.3-.18-3.1.89.9-3.02-.2-.31A7.87 7.87 0 0 1 12.04 4.05Zm4.5 10.03c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.44-1.36-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28Z"/>
+            </svg>
+          </a>
+          <a class="footer__social" href="tel:+34623288681" aria-label="Llamar a Alkimia New Tavern">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M21.5 16.9v2.6a1.8 1.8 0 0 1-2 1.8 17.6 17.6 0 0 1-7.7-2.7 17.3 17.3 0 0 1-5.3-5.3A17.6 17.6 0 0 1 3.8 5.5a1.8 1.8 0 0 1 1.8-2h2.6a1.8 1.8 0 0 1 1.8 1.5c.1.9.3 1.7.6 2.5a1.8 1.8 0 0 1-.4 1.9l-1.1 1.1a14.4 14.4 0 0 0 5.4 5.4l1.1-1.1a1.8 1.8 0 0 1 1.9-.4c.8.3 1.6.5 2.5.6a1.8 1.8 0 0 1 1.5 1.9Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Secciones">
+        <p class="footer__title">Navegación</p>
+        <ul class="footer__list" role="list">
+          <li><a href="#sobre-nosotros">El local</a></li>
+          <li><a href="#carta">Carta</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#resenas">Reseñas</a></li>
+          <li><a href="#info">Información</a></li>
+          <li><a href="#reservar">Reservar</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <p class="footer__title">Contacto</p>
+        <ul class="footer__list" role="list">
+          <li><a href="tel:+34623288681">623 28 86 81</a></li>
+          <li><a href="https://wa.me/34623288681" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><span>C. Alcalde Rodrigo Manchón España, 4, bajo</span></li>
+          <li><span>30820 Alcantarilla, Murcia</span></li>
+          <li><span class="pending">Horarios: consultar</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; <span id="year">2026</span> Alkimia New Tavern. Todos los derechos reservados.</p>
+      <ul class="footer__legal" role="list">
+        <li><a href="/aviso-legal.html">Aviso legal</a></li>
+        <li><a href="/politica-privacidad.html">Privacidad</a></li>
+        <li><a href="/politica-cookies.html">Cookies</a></li>
+      </ul>
+    </div>
+
+    <p class="footer__attrib">
+      Datos de ubicación y mapa: &copy; Google Maps. Las reseñas reproducidas en
+      esta web fueron publicadas por sus autores en Google Maps y pertenecen a
+      sus autores.
+    </p>
+
+  </div>
+</footer>
+
+<!-- ==========================================================================
+     LIGHTBOX DE LA GALERÍA
+     ========================================================================== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true"
+     aria-label="Visor de fotografías" aria-hidden="true">
+
+  <div class="lightbox__bar">
+    <p class="lightbox__count"><span id="lbCurrent">1</span> / <span id="lbTotal">12</span></p>
+    <button class="lightbox__close" id="lbClose" type="button" aria-label="Cerrar el visor de fotografías">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+        <path d="M6 6l12 12M18 6 6 18"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="lightbox__stage">
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" type="button" aria-label="Foto anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M15 5 8 12l7 7"/>
+      </svg>
+    </button>
+
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" id="lbImg" src="" alt="">
+    </figure>
+
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" type="button" aria-label="Foto siguiente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="m9 5 7 7-7 7"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="lightbox__foot">
+    <p class="lightbox__caption" id="lbCaption"></p>
+    <p class="lightbox__hint">Flechas para navegar &middot; Esc para cerrar</p>
+    <div class="lightbox__thumbs" id="lbThumbs"></div>
+  </div>
+</div>
+
+<!-- Botón flotante de WhatsApp: aparece al bajar del hero -->
+<a class="fab" id="fab" href="https://wa.me/34623288681" target="_blank" rel="noopener"
+   aria-label="Escribir a Alkimia New Tavern por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+    <path d="M12.04 2.2a9.72 9.72 0 0 0-8.3 14.77L2.2 22.05l5.22-1.5A9.72 9.72 0 1 0 12.04 2.2Zm0 1.85a7.87 7.87 0 1 1-4.1 14.6l-.3-.18-3.1.89.9-3.02-.2-.31A7.87 7.87 0 0 1 12.04 4.05Zm4.5 10.03c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.44-1.36-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28Z"/>
+  </svg>
+</a>
+
+<script src="/script.js" defer></script>
+</body>
+</html>

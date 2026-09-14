@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B0B0D" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F7F4EE" media="(prefers-color-scheme: light)">
+<title>Página no encontrada | Alkimia New Tavern</title>
+<meta name="description" content="La página que buscas no existe. Vuelve al inicio de Alkimia New Tavern.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<script>
+  (function () {
+    document.documentElement.classList.remove('no-js');
+    try {
+      var saved = localStorage.getItem('alkimia-theme');
+      var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      if ((saved || (prefersLight ? 'light' : 'dark')) === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (e) { /* almacenamiento bloqueado */ }
+  })();
+</script>
+<style>
+  /* Página breve: se centra vertically sin necesidad de más sistema */
+  .error {
+    min-block-size: 100svh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: var(--space-2xl) var(--gutter);
+  }
+  .error__code {
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 3rem + 14vw, 12rem);
+    font-weight: 700;
+    line-height: 0.9;
+    color: var(--accent);
+    opacity: .22;
+    margin-bottom: -0.15em;
+  }
+  .error__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+    margin-top: var(--space-xl);
+  }
+</style>
+</head>
+<body>
+<main class="error">
+  <div>
+    <p class="error__code" aria-hidden="true">404</p>
+    <p class="eyebrow" style="justify-content:center">Nada por aquí</p>
+    <h1>Esta página no existe</h1>
+    <p class="lede" style="margin-inline:auto">
+      Puede que el enlace esté mal escrito o que la página ya no esté
+      disponible. Te llevamos de vuelta.
+    </p>
+    <div class="error__actions">
+      <a class="btn btn--primary btn--lg" href="/">Volver al inicio</a>
+      <a class="btn btn--ghost btn--lg" href="tel:+34623288681">Llamar al 623 28 86 81</a>
+    </div>
+  </div>
+</main>
+<script src="/script.js" defer></script>
+</body>
+</html>
