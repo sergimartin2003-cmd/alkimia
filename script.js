@@ -741,6 +741,15 @@
     }
 
     $$('img').forEach(function (img) {
+      /* El visor se rellena por JavaScript: si lo sustituyéramos aquí, la
+         referencia que guarda el lightbox quedaría fuera del documento y no
+         volvería a mostrarse ninguna foto. */
+      if (img.id === 'lbImg' || img.closest('#lightbox')) return;
+
+      /* Sin src no hay nada que fallar todavía */
+      var src = img.getAttribute('src');
+      if (!src) return;
+
       /* Una imagen ya cargada tiene naturalWidth > 0 */
       if (img.complete && img.naturalWidth === 0) {
         replace(img);

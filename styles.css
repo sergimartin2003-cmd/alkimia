@@ -1572,6 +1572,13 @@ strong { font-weight: 700; color: var(--fg); }
   transition-delay: 0s;
 }
 
+/* Los elementos de una cuadrícula no bajan de su ancho mínimo automático.
+   Sin esto, el contenido de una fila (miniaturas, foto) ensancha la columna
+   entera y deja los botones de cerrar y avanzar fuera de la pantalla. */
+.lightbox > * { min-inline-size: 0; }
+
+.lightbox__figure { min-inline-size: 0; max-inline-size: 100%; }
+
 .lightbox__bar {
   display: flex;
   align-items: center;
@@ -2730,6 +2737,10 @@ select.form__control {
   .lightbox__img { max-block-size: calc(100svh - 190px); }
 
   .footer__bottom { flex-direction: column; align-items: flex-start; }
+
+  /* El botón flotante de WhatsApp es fijo: sin este colchón taparía de forma
+     permanente la última línea del pie. */
+  .footer { padding-block-end: 6.5rem; }
 }
 
 /* Pantallas muy anchas: limita el crecimiento del texto del hero */
