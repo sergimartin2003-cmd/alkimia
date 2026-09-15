@@ -4,6 +4,19 @@ Esta carpeta está vacía a propósito: **las fotos las tienes que poner tú**.
 El código ya las referencia con estos nombres exactos, así que basta con
 copiarlas aquí con el nombre correspondiente. No hace falta tocar el HTML.
 
+> ## Lo más fácil: usa la herramienta
+>
+> Abre **`herramientas/preparar-fotos.html`** con doble clic (se abre en tu
+> navegador). Arrastras las fotos, pulsas un botón y te devuelve un ZIP con
+> todas renombradas, recortadas y comprimidas. Descomprímelo aquí y listo.
+>
+> No necesitas leer el resto de este archivo ni renombrar nada a mano.
+> La herramienta funciona sin conexión y tus fotos no se suben a ningún sitio.
+
+---
+
+Si prefieres hacerlo a mano, esta es la tabla de referencia.
+
 ## Archivos que la web espera
 
 | Nombre del archivo             | Qué foto va aquí                                            | Dónde aparece            | Tamaño recomendado |

@@ -1,0 +1,7 @@
+# Archivos que no deben publicarse en el sitio web.
+# Están en el repositorio porque sirven para trabajar con él, pero no
+# forman parte de la web que ve el público.
+
+herramientas/
+README.md
+images/LEEME.md

@@ -13,12 +13,56 @@ publica arrastrando la carpeta. No hay npm, ni build, ni framework.
 
 ### Paso 1 — Poner las fotos
 
-La carpeta `images/` está vacía. Copia ahí tus fotos con los nombres exactos
-que espera el código. **La lista completa con los tamaños recomendados está en
-[`images/LEEME.md`](images/LEEME.md).**
+La carpeta `images/` está vacía: las fotos las pones tú. Hay dos formas, y la
+primera no requiere saber nada de programación.
 
-> Si falta alguna foto la web no se rompe: en su sitio aparece un motivo con el
-> símbolo de la marca. Pero conviene completarlas todas antes de publicar.
+#### Forma A — con la herramienta incluida (recomendada)
+
+El proyecto trae una herramienta que **renombra, recorta y comprime** tus
+fotos sola. Así no tienes que acertar con catorce nombres de archivo ni
+preocuparte de que las fotos del móvil pesen 4 MB.
+
+1. En GitHub, botón verde **Code → Download ZIP**. Descomprime lo que baja.
+2. Dentro de la carpeta, abre `herramientas/preparar-fotos.html` haciendo
+   **doble clic**. Se abre en tu navegador como una página normal.
+3. Arrastra todas tus fotos a la caja grande: se van colocando en orden.
+   Si alguna no queda donde toca, arrástrala a su hueco correcto.
+4. Pulsa **Descargar las fotos preparadas**. Baja un `fotos-alkimia.zip`.
+5. Descomprímelo y mete esas fotos en la carpeta `images` del proyecto.
+
+Tus fotos no salen de tu ordenador en ningún momento: la herramienta
+trabaja dentro del navegador, sin conexión y sin subir nada a ningún sitio.
+
+> **Si una foto sale más pequeña de lo indicado** es porque la original ya lo
+> era. La herramienta reduce, pero nunca amplía: estirar una foto pequeña la
+> deja borrosa y se nota.
+
+#### Forma B — a mano
+
+Renombra tú las fotos siguiendo la tabla de
+[`images/LEEME.md`](images/LEEME.md) y cópialas en `images/`. Recórtalas a la
+proporción indicada y pásalas por [squoosh.app](https://squoosh.app) para
+dejarlas por debajo de 250 KB.
+
+#### Cómo subirlas a GitHub
+
+Si quieres que el repositorio quede actualizado (y no solo tu copia local):
+
+1. Entra en el repositorio y asegúrate de estar en la rama
+   `claude/dazzling-archimedes-3gihi8` (selector de ramas arriba a la
+   izquierda).
+2. Entra en la carpeta `images`.
+3. **Add file → Upload files**.
+4. Arrastra las catorce fotos ya renombradas.
+5. Abajo, **Commit changes**.
+
+Si en lugar de eso vas a publicar arrastrando la carpeta a Vercel, no hace
+falta este paso: basta con que las fotos estén en tu carpeta local.
+
+> **Sobre los derechos de las fotos:** las que aparecen en la ficha de Google
+> Maps las suben en su mayoría los clientes, y los derechos son de quien hizo
+> la foto. Para la web del negocio usa fotos propias, hechas por vosotros o
+> por un fotógrafo. Si quieres usar la de un cliente, pídele permiso antes.
 
 ### Paso 2 — Rellenar los datos pendientes
 
@@ -53,11 +97,15 @@ alkimia/
 │
 ├── images/                     ← TUS FOTOS VAN AQUÍ (ver images/LEEME.md)
 │
+├── herramientas/
+│   └── preparar-fotos.html     Renombra, recorta y comprime tus fotos
+│
 ├── favicon.svg                 Icono de la pestaña del navegador
 ├── site.webmanifest            Permite "añadir a pantalla de inicio" en móvil
 ├── robots.txt                  Instrucciones para Google
 ├── sitemap.xml                 Mapa del sitio para buscadores
-└── vercel.json                 Cabeceras de seguridad y caché
+├── vercel.json                 Cabeceras de seguridad y caché
+└── .vercelignore               Deja fuera de la web el README y las herramientas
 ```
 
 Para verlo en local basta con abrir `index.html` en el navegador. Si algún
