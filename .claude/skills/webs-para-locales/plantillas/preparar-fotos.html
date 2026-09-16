@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preparar las fotos — [NOMBRE DEL LOCAL]</title>
+<style>
+  /* Herramienta de uso interno. Funciona sin conexión: no envía las fotos
+     a ningún sitio, todo el procesado ocurre en tu propio navegador. */
+  :root {
+    --bg: #0F0F12; --panel: #17171D; --panel-2: #1F1F27;
+    --fg: #F7F3EC; --muted: #A9A398; --dim: #7C766D;
+    --accent: #D79A4C; --accent-ink: #1A1206;
+    --ok: #6FBF73; --line: rgba(247,243,236,.13);
+    --radius: 12px;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 0 6rem;
+    background: var(--bg); color: var(--fg);
+    font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 1.25rem; }
+  header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--line); margin-bottom: 2rem; }
+  h1 { font-size: 1.75rem; margin: 0 0 .5rem; letter-spacing: -.02em; }
+  .sub { color: var(--muted); margin: 0; max-width: 62ch; }
+  .steps { counter-reset: s; list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: .6rem; }
+  .steps li { counter-increment: s; padding-left: 2.2rem; position: relative; color: var(--muted); }
+  .steps li::before {
+    content: counter(s);
+    position: absolute; left: 0; top: .15rem;
+    width: 1.55rem; height: 1.55rem; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--accent); color: var(--accent-ink);
+    font-size: .8rem; font-weight: 700;
+  }
+  .bulk {
+    margin: 2rem 0; padding: 1.5rem; border: 2px dashed var(--line);
+    border-radius: var(--radius); text-align: center; transition: .2s;
+  }
+  .bulk.over { border-color: var(--accent); background: rgba(215,154,76,.08); }
+  .bulk p { margin: 0 0 .9rem; color: var(--muted); }
+  .grid { display: grid; gap: .85rem; }
+  .slot {
+    display: grid; grid-template-columns: 96px 1fr auto; gap: 1rem; align-items: center;
+    padding: .85rem; background: var(--panel); border: 1px solid var(--line);
+    border-radius: var(--radius); transition: .2s;
+  }
+  .slot.over { border-color: var(--accent); background: var(--panel-2); }
+  .slot.done { border-color: rgba(111,191,115,.45); }
+  .thumb {
+    width: 96px; height: 72px; border-radius: 8px; overflow: hidden;
+    background: var(--panel-2); display: grid; place-items: center;
+    color: var(--dim); font-size: .7rem; text-align: center; flex: none;
+  }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .meta { min-width: 0; }
+  .fname {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: .82rem; color: var(--accent); word-break: break-all;
+  }
+  .desc { font-weight: 600; margin: .1rem 0; }
+  .hint { font-size: .8rem; color: var(--dim); }
+  .state { font-size: .8rem; color: var(--ok); font-weight: 600; }
+  .btn {
+    appearance: none; border: 1px solid var(--line); background: var(--panel-2);
+    color: var(--fg); padding: .6rem 1rem; border-radius: 999px;
+    font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer;
+    white-space: nowrap; transition: .15s;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn--primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .btn--primary:hover { background: #E8BB78; border-color: #E8BB78; color: var(--accent-ink); }
+  .btn--primary:disabled { opacity: .45; cursor: not-allowed; }
+  .btn--lg { padding: .95rem 1.8rem; font-size: 1rem; }
+  .bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 10;
+    background: rgba(15,15,18,.94); backdrop-filter: blur(12px);
+    border-top: 1px solid var(--line); padding: 1rem 1.25rem;
+  }
+  .bar__in {
+    max-width: 980px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  .count { color: var(--muted); font-size: .9rem; }
+  .count b { color: var(--fg); }
+  .note {
+    margin-top: 2rem; padding: 1rem 1.25rem; border-left: 3px solid var(--accent);
+    background: var(--panel); border-radius: 0 var(--radius) var(--radius) 0;
+    color: var(--muted); font-size: .9rem;
+  }
+  .note b { color: var(--fg); }
+  input[type=file] { display: none; }
+  @media (max-width: 620px) {
+    .slot { grid-template-columns: 72px 1fr; }
+    .slot .btn { grid-column: 1 / -1; width: 100%; }
+    .thumb { width: 72px; height: 56px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>Preparar las fotos de la web</h1>
+    <p class="sub">
+      Esta página renombra, recorta y comprime tus fotos con los nombres y
+      tamaños exactos que espera la web. Funciona sin conexión y
+      <b>las fotos no salen de tu ordenador</b>: todo se procesa aquí mismo.
+    </p>
+    <ol class="steps">
+      <li>Arrastra tus fotos a la caja de abajo, o colócalas una a una en su hueco.</li>
+      <li>Comprueba que cada foto está donde toca.</li>
+      <li>Pulsa <b>Descargar las fotos preparadas</b>: obtendrás un ZIP.</li>
+      <li>Descomprímelo y sube esas fotos a la carpeta <code>images</code> del proyecto.</li>
+    </ol>
+  </header>
+
+  <div class="bulk" id="bulk">
+    <p>Arrastra aquí varias fotos de golpe y se irán colocando en orden</p>
+    <button class="btn" id="bulkBtn" type="button">Elegir fotos del ordenador</button>
+    <input type="file" id="bulkInput" accept="image/*" multiple>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <p class="note">
+    <b>¿Te falta alguna foto?</b> No pasa nada: deja el hueco vacío. En la web
+    aparecerá un motivo con el símbolo del local en lugar de una imagen rota.
+    Puedes volver aquí y añadirla más adelante.
+  </p>
+</div>
+
+<div class="bar">
+  <div class="bar__in">
+    <span class="count" id="count"><b>0</b> de 14 fotos colocadas</span>
+    <button class="btn btn--primary btn--lg" id="download" type="button" disabled>
+      Descargar las fotos preparadas
+    </button>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ADAPTAR POR PROYECTO.
+     Cada hueco: nombre de archivo que espera la web, qué foto va y a qué tamaño
+     se recorta. Los tamaños salen de cómo se muestra cada imagen en la página.
+     "desc" y "hint" los lee el cliente: escríbelos en lenguaje llano, sin
+     tecnicismos ni nombres de clases CSS. */
+  var SLOTS = [
+    { file: 'hero.jpg',                  w: 2000, h: 950,  desc: 'Portada a pantalla completa', hint: 'La mejor panorámica de la sala, con la barra al fondo' },
+    { file: 'interior-barra.jpg',        w: 1600, h: 1200, desc: 'La barra',                    hint: 'Estanterías de botellas, cafetera' },
+    { file: 'interior-comedor.jpg',      w: 1200, h: 1200, desc: 'El comedor',                  hint: 'Mesas de madera y sillas negras' },
+    { file: 'interior-noche.jpg',        w: 1000, h: 2000, desc: 'La sala de noche (vertical)', hint: 'Con las bombillas encendidas' },
+    { file: 'terraza.jpg',               w: 1600, h: 800,  desc: 'La terraza (apaisada)',       hint: 'La terraza cubierta, mejor al anochecer' },
+    { file: 'plato-nachos.jpg',          w: 1600, h: 800,  desc: 'Nachos a la pastora',         hint: 'Se muestra en grande: elige una foto nítida' },
+    { file: 'plato-steak-tartar.jpg',    w: 1200, h: 1200, desc: 'Tosta de steak tartar',       hint: 'Lo que más destacan en las reseñas' },
+    { file: 'plato-gamba-crujiente.jpg', w: 1200, h: 1200, desc: 'Gamba crujiente',             hint: 'Con la salsa tártara' },
+    { file: 'plato-tostas-anchoa.jpg',   w: 1200, h: 1200, desc: 'Tostas de anchoa',            hint: 'Las de la pizarra' },
+    { file: 'plato-navajas.jpg',         w: 1200, h: 1200, desc: 'Navajas',                     hint: 'El plato rectangular' },
+    { file: 'plato-patatas.jpg',         w: 1200, h: 1200, desc: 'Patatas de la casa',          hint: 'Las del bol oscuro con cebolla encurtida' },
+    { file: 'postre-coulant.jpg',        w: 1200, h: 1200, desc: 'Coulant de chocolate',        hint: 'Con el helado' },
+    { file: 'postre-bizcocho.jpg',       w: 1200, h: 1200, desc: 'Postre de la casa',           hint: 'El bizcocho templado con helado' },
+    { file: 'og.jpg',                    w: 1200, h: 630,  desc: 'Vista previa al compartir',   hint: 'La que se ve al mandar el enlace por WhatsApp. Puede repetir la de portada' }
+  ];
+
+  var MAX_BYTES = 260 * 1024;   /* objetivo de peso por foto */
+  var picked = new Array(SLOTS.length).fill(null);
+
+  var grid = document.getElementById('grid');
+  var countEl = document.getElementById('count');
+  var downloadBtn = document.getElementById('download');
+
+  /* ---------- Construcción de los huecos ---------- */
+
+  SLOTS.forEach(function (slot, i) {
+    var row = document.createElement('div');
+    row.className = 'slot';
+    row.dataset.index = i;
+    row.innerHTML =
+      '<div class="thumb" data-thumb>' + (i + 1) + '</div>' +
+      '<div class="meta">' +
+        '<div class="desc">' + slot.desc + '</div>' +
+        '<div class="fname">' + slot.file + ' &middot; ' + slot.w + '&times;' + slot.h + '</div>' +
+        '<div class="hint" data-hint>' + slot.hint + '</div>' +
+      '</div>' +
+      '<button class="btn" type="button" data-pick>Elegir foto</button>' +
+      '<input type="file" accept="image/*" data-input>';
+    grid.appendChild(row);
+
+    var input = row.querySelector('[data-input]');
+    row.querySelector('[data-pick]').addEventListener('click', function () { input.click(); });
+    input.addEventListener('change', function () {
+      if (input.files && input.files[0]) assign(i, input.files[0]);
+    });
+
+    /* Arrastrar una foto sobre un hueco concreto */
+    ['dragenter', 'dragover'].forEach(function (ev) {
+      row.addEventListener(ev, function (e) { e.preventDefault(); row.classList.add('over'); });
+    });
+    ['dragleave', 'drop'].forEach(function (ev) {
+      row.addEventListener(ev, function () { row.classList.remove('over'); });
+    });
+    row.addEventListener('drop', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var f = e.dataTransfer.files && e.dataTransfer.files[0];
+      if (f) assign(i, f);
+    });
+  });
+
+  function assign(i, file) {
+    if (!file.type || file.type.indexOf('image/') !== 0) {
+      alert('«' + file.name + '» no parece una imagen.');
+      return;
+    }
+    picked[i] = file;
+
+    var row = grid.children[i];
+    var thumb = row.querySelector('[data-thumb]');
+    thumb.innerHTML = '';
+    var img = document.createElement('img');
+    img.src = URL.createObjectURL(file);
+    img.onload = function () { URL.revokeObjectURL(img.src); };
+    thumb.appendChild(img);
+
+    row.classList.add('done');
+    row.querySelector('[data-hint]').innerHTML =
+      '<span class="state">Lista</span> &middot; ' + file.name;
+    row.querySelector('[data-pick]').textContent = 'Cambiar';
+    refresh();
+  }
+
+  function refresh() {
+    var n = picked.filter(Boolean).length;
+    countEl.innerHTML = '<b>' + n + '</b> de ' + SLOTS.length + ' fotos colocadas';
+    downloadBtn.disabled = n === 0;
+  }
+
+  /* ---------- Carga en bloque: rellena los huecos vacíos en orden ---------- */
+
+  var bulk = document.getElementById('bulk');
+  var bulkInput = document.getElementById('bulkInput');
+  document.getElementById('bulkBtn').addEventListener('click', function () { bulkInput.click(); });
+  bulkInput.addEventListener('change', function () { fill(bulkInput.files); });
+
+  ['dragenter', 'dragover'].forEach(function (ev) {
+    bulk.addEventListener(ev, function (e) { e.preventDefault(); bulk.classList.add('over'); });
+  });
+  ['dragleave', 'drop'].forEach(function (ev) {
+    bulk.addEventListener(ev, function () { bulk.classList.remove('over'); });
+  });
+  bulk.addEventListener('drop', function (e) {
+    e.preventDefault();
+    fill(e.dataTransfer.files);
+  });
+
+  /* Evita que soltar una foto fuera de sitio abra el archivo en el navegador */
+  ['dragover', 'drop'].forEach(function (ev) {
+    document.addEventListener(ev, function (e) { e.preventDefault(); });
+  });
+
+  function fill(files) {
+    var list = Array.prototype.slice.call(files).filter(function (f) {
+      return f.type && f.type.indexOf('image/') === 0;
+    });
+    for (var k = 0, i = 0; k < list.length && i < SLOTS.length; i++) {
+      if (!picked[i]) assign(i, list[k++]);
+    }
+  }
+
+  /* ---------- Recorte, redimensionado y compresión ---------- */
+
+  function process(file, tw, th) {
+    return new Promise(function (resolve, reject) {
+      var reader = new FileReader();
+      reader.onerror = function () { reject(new Error('No se pudo leer ' + file.name)); };
+      reader.onload = function () {
+        var img = new Image();
+        img.onerror = function () { reject(new Error('No se pudo abrir ' + file.name)); };
+        img.onload = function () {
+          /* No ampliamos una foto pequeña: se deformaría. Se respeta su
+             tamaño real y solo se ajusta la proporción. */
+          var scale = Math.min(1, img.naturalWidth / tw, img.naturalHeight / th);
+          var ow = Math.max(1, Math.round(tw * scale));
+          var oh = Math.max(1, Math.round(th * scale));
+
+          var canvas = document.createElement('canvas');
+          canvas.width = ow;
+          canvas.height = oh;
+          var ctx = canvas.getContext('2d');
+          ctx.imageSmoothingQuality = 'high';
+
+          /* Recorte centrado que llena el marco sin deformar (como object-fit: cover) */
+          var sr = img.naturalWidth / img.naturalHeight;
+          var dr = tw / th;
+          var sw, sh, sx, sy;
+          if (sr > dr) {                      /* origen más apaisado: recorta a los lados */
+            sh = img.naturalHeight;
+            sw = sh * dr;
+            sx = (img.naturalWidth - sw) / 2;
+            sy = 0;
+          } else {                            /* origen más vertical: recorta arriba y abajo */
+            sw = img.naturalWidth;
+            sh = sw / dr;
+            sx = 0;
+            sy = (img.naturalHeight - sh) / 2;
+          }
+          ctx.drawImage(img, sx, sy, sw, sh, 0, 0, ow, oh);
+
+          /* Baja la calidad por pasos hasta entrar en el peso objetivo */
+          var qualities = [0.86, 0.78, 0.7, 0.62, 0.55];
+          var qi = 0;
+          (function attempt() {
+            canvas.toBlob(function (blob) {
+              if (!blob) { reject(new Error('No se pudo convertir ' + file.name)); return; }
+              if (blob.size <= MAX_BYTES || qi >= qualities.length - 1) {
+                blob.arrayBuffer().then(function (buf) {
+                  resolve({ bytes: new Uint8Array(buf), w: ow, h: oh });
+                }, reject);
+                return;
+              }
+              qi++;
+              attempt();
+            }, 'image/jpeg', qualities[qi]);
+          })();
+        };
+        img.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  /* ---------- Empaquetado ZIP (sin comprimir: el JPEG ya lo está) ---------- */
+
+  var CRC_TABLE = (function () {
+    var t = new Uint32Array(256);
+    for (var n = 0; n < 256; n++) {
+      var c = n;
+      for (var k = 0; k < 8; k++) c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1);
+      t[n] = c >>> 0;
+    }
+    return t;
+  })();
+
+  function crc32(data) {
+    var c = 0xFFFFFFFF;
+    for (var i = 0; i < data.length; i++) c = CRC_TABLE[(c ^ data[i]) & 0xFF] ^ (c >>> 8);
+    return (c ^ 0xFFFFFFFF) >>> 0;
+  }
+
+  function zip(entries) {
+    var chunks = [], central = [], offset = 0;
+    var now = new Date();
+    var dosTime = ((now.getHours() & 31) << 11) | ((now.getMinutes() & 63) << 5) | ((now.getSeconds() / 2) & 31);
+    var dosDate = (((now.getFullYear() - 1980) & 127) << 9) | (((now.getMonth() + 1) & 15) << 5) | (now.getDate() & 31);
+
+    entries.forEach(function (e) {
+      var name = new TextEncoder().encode(e.name);
+      var crc = crc32(e.data);
+      var size = e.data.length;
+
+      var local = new DataView(new ArrayBuffer(30));
+      local.setUint32(0, 0x04034b50, true);   /* firma de cabecera local */
+      local.setUint16(4, 20, true);           /* versión necesaria */
+      local.setUint16(6, 0x0800, true);       /* nombres en UTF-8 */
+      local.setUint16(8, 0, true);            /* método 0: almacenado */
+      local.setUint16(10, dosTime, true);
+      local.setUint16(12, dosDate, true);
+      local.setUint32(14, crc, true);
+      local.setUint32(18, size, true);
+      local.setUint32(22, size, true);
+      local.setUint16(26, name.length, true);
+      local.setUint16(28, 0, true);
+      chunks.push(new Uint8Array(local.buffer), name, e.data);
+
+      var cd = new DataView(new ArrayBuffer(46));
+      cd.setUint32(0, 0x02014b50, true);      /* firma de directorio central */
+      cd.setUint16(4, 20, true);
+      cd.setUint16(6, 20, true);
+      cd.setUint16(8, 0x0800, true);
+      cd.setUint16(10, 0, true);
+      cd.setUint16(12, dosTime, true);
+      cd.setUint16(14, dosDate, true);
+      cd.setUint32(16, crc, true);
+      cd.setUint32(20, size, true);
+      cd.setUint32(24, size, true);
+      cd.setUint16(28, name.length, true);
+      cd.setUint32(42, offset, true);
+      central.push(new Uint8Array(cd.buffer), name);
+
+      offset += 30 + name.length + size;
+    });
+
+    var centralSize = central.reduce(function (a, b) { return a + b.length; }, 0);
+    var end = new DataView(new ArrayBuffer(22));
+    end.setUint32(0, 0x06054b50, true);       /* fin del directorio central */
+    end.setUint16(8, entries.length, true);
+    end.setUint16(10, entries.length, true);
+    end.setUint32(12, centralSize, true);
+    end.setUint32(16, offset, true);
+
+    return new Blob(chunks.concat(central, [new Uint8Array(end.buffer)]), { type: 'application/zip' });
+  }
+
+  /* ---------- Descarga ---------- */
+
+  downloadBtn.addEventListener('click', function () {
+    var jobs = [];
+    picked.forEach(function (file, i) {
+      if (file) jobs.push({ i: i, file: file });
+    });
+    if (!jobs.length) return;
+
+    downloadBtn.disabled = true;
+    var original = downloadBtn.textContent;
+    var done = 0;
+
+    Promise.all(jobs.map(function (job) {
+      var slot = SLOTS[job.i];
+      return process(job.file, slot.w, slot.h).then(function (out) {
+        done++;
+        downloadBtn.textContent = 'Preparando… ' + done + '/' + jobs.length;
+        return { name: slot.file, data: out.bytes };
+      });
+    })).then(function (entries) {
+      var blob = zip(entries);
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'fotos-web.zip';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+
+      var kb = Math.round(blob.size / 1024);
+      downloadBtn.textContent = 'Descargado (' + kb + ' KB) — descargar otra vez';
+      downloadBtn.disabled = false;
+    }).catch(function (err) {
+      alert('Ha fallado el procesado: ' + err.message);
+      downloadBtn.textContent = original;
+      downloadBtn.disabled = false;
+    });
+  });
+
+  refresh();
+})();
+</script>
+</body>
+</html>
